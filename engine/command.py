@@ -13,10 +13,12 @@ def speak(text):
 
 def takecommand():
     r = sr.Recognizer()
+
     with sr.Microphone() as source:
         print("Listening...")
         r.pause_threshold = 1
         r.adjust_for_ambient_noise(source)
+
         audio = r.listen(source, 10, 6)
 
     try:
@@ -28,12 +30,12 @@ def takecommand():
 
     return query.lower()
 
-    text = takecommand()
-    speak(text)
+text = takecommand()
+# speak(text)
 
 
 
 
-print("Starting the speak function...") # Add this line
-speak("Hi, Aditya Saha nice to meet you. How are you?")
-print("Finished speaking.") # Add this line
+# print("Starting the speak function...") # Add this line
+speak(text)
+# print("Finished speaking.") # Add this line
