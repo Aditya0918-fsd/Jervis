@@ -21,3 +21,11 @@ def remove_words(input_string, words_to_remove):
     result_string = ' '.join(filtered_words)
 
     return result_string
+
+# #Example usage
+# input_string = "make a phone call to pappa"
+# words_to_remove = ['make', 'a', 'to', 'phone', 'call', 'send', 'message', 'wahtsapp', '']
+
+# result = remove_words(input_string, words_to_remove)
+# print(result)
+
