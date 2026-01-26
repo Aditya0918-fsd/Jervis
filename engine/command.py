@@ -52,7 +52,7 @@ def allCommands():
             from engine.features import PlayYoutube
             PlayYoutube(query)
 
-        elif "send message" in query or "phone call" in query or "video call" in query:
+        elif "send message" in query or "call" in query or "video call" in query:
             from engine.features import findContact, whatsApp
             message = " "
             contact_no, name = findContact(query)
@@ -63,7 +63,7 @@ def allCommands():
                     speak("what message to send")
                     query = takecommand()
                     
-                elif "phone call" in query:
+                elif "call" in query:
                     message = 'call'
                 else:
                     message = 'video call'
