@@ -61,4 +61,52 @@ $(document).ready(function () {
     }
     document.addEventListener('keyup', doc_keyUp, false);
 
+    function playAssistant(massage) {
+
+        if (massage != "") {
+
+            $("#Oval").attr("hidden", true);
+            $("#SiriWave").attr("hidden", false);
+            eel.allCommands(massage)
+            $("#chatbox").val("");
+            $("#MicBtn").attr("hidden", false);
+            $("#sendBtn").attr("hidden", true); 
+        }
+    }
+
+    function showHideButton(massage) {
+
+        if (massage.length == 0) {
+            $("#MicBtn").attr("hidden", false);
+            $("#sendBtn").attr("hidden", true);
+
+        } else {
+
+            $("#MicBtn").attr("hidden", true);
+            $("#sendBtn").attr("hidden", false);
+        }
+    }
+
+    $("#chatbox").keyup(function () {
+
+        let massage = $("#chatbox").val();
+        showHideButton(massage);
+    });
+
+    $("#sendBtn").click(function () {
+
+        let massage = $("#chatbox").val();
+        playAssistant(massage);
+    });
+
+
+    $("#chatbox").keypress(function (e) {
+        key = e.which;
+        if (key == 13) {
+            let massage = $("#chatbox").val();
+            playAssistant(massage);
+        }
+
+    });
+
 }); 
