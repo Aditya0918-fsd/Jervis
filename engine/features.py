@@ -42,7 +42,7 @@ def openCommand(query):
             result = cursor.fetchall()
 
             if len(result) != 0:
-                speak("Opening " +query)
+                speak(" Aditya opening " +query)
                 os.startfile(result[0][0])
 
             elif len(result) == 0:
@@ -51,11 +51,11 @@ def openCommand(query):
                 result = cursor.fetchall()
 
                 if len(result) != 0:
-                    speak("Opening " +query)
+                    speak("Aditya opening " +query)
                     webbrowser.open(result[0][0])
 
                 else:
-                    speak("Opening "+query)
+                    speak("Aditya opening "+query)
                     try:
                         os.system('Start '+query)
                     except:
